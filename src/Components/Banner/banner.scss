@@ -1,0 +1,32 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.banner {
+  background-color: $primary;
+  position: relative;
+
+  .arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+  }
+
+  .left { left: 20px; }
+  .right { right: 20px; }
+  
+  .wrapper {
+    padding: 1.5em 0;
+    @include flex(row,flex-start, center);
+
+    img { flex-basis: 50%; }
+
+    h2 {
+      flex-basis: 40%;
+      color: $secondary;
+      font-size: 28px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}

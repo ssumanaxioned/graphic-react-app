@@ -1,0 +1,27 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.welcome {
+  padding: 2em 0;
+  background-color: $secondary;
+
+  .wrapper {
+    h3 {
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.welcome_container {
+  padding-top: 1.5em;
+  margin-top: 1.5em;
+  border-top: 1px dashed $darkgray;
+  @include flex(row, space-between, center);
+
+  .icons {
+    color: $white;
+    font-size: 56px;
+  }
+
+}

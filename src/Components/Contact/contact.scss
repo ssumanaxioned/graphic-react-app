@@ -1,0 +1,91 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.contact_container {
+  padding: 1.5em 0;
+
+  .wrapper {
+    @include flex(row, space-between, flex-start);
+
+    ul { 
+      flex-basis: 23%; 
+      @include flex(column, flex-start, flex-start)
+    }
+
+    form { flex-basis: 25%; }
+  }
+}
+
+.head { margin-left: 0; }
+
+.about {
+
+  li {
+    margin-bottom: 1.5em;
+
+    a{ 
+      margin-right: .5em; 
+      color: $darkgray; 
+      font-size: 24px;
+    }
+  }
+}
+
+.archives {
+  li {
+    width: 90%;
+
+    &:not(:first-of-type) { padding-bottom: 1em; }
+    &:not(:last-of-type) { border-bottom: 1px dashed $darkgray; }
+    
+    &:not(:nth-of-type(2)) { padding-top: 1em; }
+
+    &:first-of-type {
+      padding: 0;
+      border: none;
+      margin-bottom: 1.5em;
+    }
+  }
+}
+
+.contact {
+  li {
+    margin-bottom: 1em;
+    @include flex(row, flex-start, center);
+
+    .contact_icons { 
+      margin-right: .5em;
+      color: $darkgray;
+      font-size: 24px; 
+    }
+
+    a {
+      color: $textcolor;
+    }
+  }
+}
+
+form {
+  * { display: block; }
+
+  .head { margin-bottom: 1em; }
+  
+  input { 
+    width: calc(100% - 1em);
+    padding: .5em;
+    border: none;
+    border-bottom: 1px solid $darkgray;
+    margin-bottom: 1em;
+    background-color: $secondary;
+
+    &::placeholder { color: $textcolor; }
+  }
+
+  button {  
+    float: right;
+    padding: .8em;
+    border: none;
+    background-color: $primary;
+    color: $white;
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.portfolio { background-color: $secondary; }
+
+.port_container {
+  padding: 1.5em 0;
+  @include flex(row, space-between, center);
+  flex-wrap: wrap;
+}

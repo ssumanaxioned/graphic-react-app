@@ -1,0 +1,31 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.icons_container {
+  @include flex(column, center, center);
+
+  .container {
+    padding: 1em;
+    border: .8em solid $white;
+    border-radius: 50%;
+    text-align: center;
+    background-color: $primary;
+  }
+}
+
+.content {
+  @include flex(column, center, center);
+
+  .title {
+    margin-top: .5em;
+    display: block;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    margin-top: .5em;
+    font-size: 16px;
+  }
+}

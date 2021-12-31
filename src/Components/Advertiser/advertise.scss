@@ -1,0 +1,24 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.advertise {
+  padding: 1.5em 0 3.5em 0;
+  background-color: $secondary;
+  
+  .wrapper {
+
+    figure {
+      margin: 1.5em 0;
+      @include flex(row, center, center);
+    }
+
+    a {
+      padding: .5em .6em;
+      border-radius: 50%;
+      float: right;
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}
+
