@@ -2,11 +2,13 @@
 @import '../../assets/styles/variables';
 
 .footer {
-  padding: .5em;
+  padding: .5em 0;
   background-color: $textcolor;
 
   .wrapper {
     @include flex(row, space-between, center);
+
+    @include responsive(max, $mobile) { @include flex(column, center, center) }
   }
 
   p { color: $white; }
@@ -19,6 +21,8 @@
     a {
       color: $white;
       text-transform: uppercase;
+
+      &:hover { @include responsive(min, $sm-laptop) { color: $primary; } }
     }
   }
 }

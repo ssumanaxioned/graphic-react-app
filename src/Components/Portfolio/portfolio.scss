@@ -7,4 +7,6 @@
   padding: 1.5em 0;
   @include flex(row, space-between, center);
   flex-wrap: wrap;
+
+  @include responsive(max, $sm-laptop) { @include flex(column, center, center); }
 }

@@ -7,9 +7,13 @@
   .wrapper {
     @include flex(row, space-between, flex-start);
 
+    @include responsive(max, $tab) { @include flex(column, flex-start, flex-start) }
+
     ul { 
       flex-basis: 23%; 
-      @include flex(column, flex-start, flex-start)
+      @include flex(column, flex-start, flex-start);
+
+      @include responsive(max, $tab) { width: 100%; }
     }
 
     form { flex-basis: 25%; }
@@ -27,6 +31,11 @@
       margin-right: .5em; 
       color: $darkgray; 
       font-size: 24px;
+
+      @include responsive(max, $sm-laptop) { font-size: 20px; }
+      @include responsive(max, $tab) { font-size: 16px; }
+
+      &:hover { @include responsive(min, $sm-laptop) { color: $primary; } }
     }
   }
 }
@@ -59,14 +68,18 @@
       font-size: 24px; 
     }
 
-    a {
-      color: $textcolor;
+    a { 
+      color: $textcolor; 
+
+      &:hover { @include responsive(min, $sm-laptop) { color: $primary; } }
     }
   }
 }
 
 form {
   * { display: block; }
+
+  @include responsive(max, $tab) {width: 100%; }
 
   .head { margin-bottom: 1em; }
   
@@ -87,5 +100,7 @@ form {
     border: none;
     background-color: $primary;
     color: $white;
+
+    &:hover { @include responsive(min, $sm-laptop) { background-color: darken($primary, 20%); } }
   }
 }

@@ -1,9 +1,9 @@
 @import '../../assets/styles/mixin';
 @import '../../assets/styles/variables';
 
-.header { 
+.header {
   background-color: $secondary;
-  
+
   .wrapper {
     position: relative;
 
@@ -13,6 +13,8 @@
       right: 0;
       font-size: 12px;
       text-transform: uppercase;
+
+      @include responsive(max, $tab) {display: none;}
     }
   }
 }
@@ -22,21 +24,52 @@
 nav {
   width: 100%;
   padding: .5em 0;
+
   @include flex(row, space-between, center);
-  
-  h1 { flex-basis: 30%; }
+
+  h1 {
+    flex-basis: 30%;
+
+    @include responsive(max, $sm-laptop) { flex-basis: 25%; }
+  }
 
   ul {
     flex-basis: 50%;
+
     @include flex(row, space-between, center);
+
+    @include responsive(max, $laptop) { flex-basis: 55%; }
+    @include responsive(max, $sm-laptop) { flex-basis: 60%; }
+    @include responsive(max, $tab) { display: none; }
 
     li {
       a {
         color: $textcolor;
-        font-size: 16px;
         text-transform: uppercase;
+
+        &:hover { @include responsive(min, $sm-laptop) { color: $primary; } }
       }
     }
 
+  }
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  right: 0;
+
+  @include responsive(max, $tab) { display: block; }
+
+  .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: $primary;
+    text-indent: -9999px;
+
+    &:first-child { margin-bottom: 5px; }
+
+    &:last-child { margin-top: 5px; }
   }
 }

@@ -4,6 +4,11 @@
 .icons_container {
   @include flex(column, center, center);
 
+  @include responsive(max, $mobile) { 
+    flex-basis: 45%; 
+    margin-bottom: 1em;
+  }
+
   .container {
     padding: 1em;
     border: .8em solid $white;
@@ -22,10 +27,16 @@
     font-size: 24px;
     text-align: center;
     text-transform: uppercase;
+
+    @include responsive(max, $sm-laptop) { font-size: 20px; }
+    @include responsive(max, $tab) { font-size: 16px; }
   }
 
   .subtitle {
     margin-top: .5em;
     font-size: 16px;
+
+    @include responsive(max, $sm-laptop) { font-size: 14px; }
+    @include responsive(max, $tab) { font-size: 12px; }
   }
 }

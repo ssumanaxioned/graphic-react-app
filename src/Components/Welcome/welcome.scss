@@ -9,6 +9,9 @@
     h3 {
       font-size: 28px;
       text-transform: uppercase;
+
+      @include responsive(max, $sm-laptop) { font-size: 24px; }
+      @include responsive(max, $tab) { font-size: 20px; }
     }
   }
 }
@@ -17,11 +20,16 @@
   padding-top: 1.5em;
   margin-top: 1.5em;
   border-top: 1px dashed $darkgray;
+
   @include flex(row, space-between, center);
+  flex-wrap: wrap;
 
   .icons {
     color: $white;
     font-size: 56px;
+
+    @include responsive(max, $sm-laptop) { font-size: 48px; }
+    @include responsive(max, $tab) { font-size: 40px; }
   }
 
 }

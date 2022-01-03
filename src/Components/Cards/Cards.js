@@ -13,7 +13,7 @@ function Cards(props) {
           <span className='subtitle'>{subtitle1}</span>
           <span className='subtitle'>{subtitle2}</span>
         </span>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum cupiditate maxime dolorum adipisci, ducimus aut eaque saepe alias. Non, at.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum cupiditate maxime dolorum adipisci, ducimus aut eaque saepe alias.</p>
       </div>
 
     </div>

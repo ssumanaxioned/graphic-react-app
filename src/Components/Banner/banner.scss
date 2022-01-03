@@ -10,14 +10,27 @@
     top: 50%;
     transform: translateY(-50%);
     color: white;
+
+    &:hover { @include responsive(min, $sm-laptop) { color: $primary; } }
+
+    .arrow_icons {
+      font-size: 42px;
+
+      @include responsive(max, $sm-laptop) { font-size: 36px; }
+      @include responsive(max, $tab) { font-size: 30px; }
+
+    }
   }
 
-  .left { left: 20px; }
-  .right { right: 20px; }
-  
+  .left { left: 1em; }
+  .right { right: 1em; }
+
   .wrapper {
     padding: 1.5em 0;
-    @include flex(row,flex-start, center);
+
+    @include flex(row, flex-start, center);
+
+    @include responsive(max, $tab) { @include flex(column, center, center) }
 
     img { flex-basis: 50%; }
 
@@ -27,6 +40,13 @@
       font-size: 28px;
       text-align: center;
       text-transform: uppercase;
+
+      @include responsive(max, $sm-laptop) { font-size: 24px; }
+      
+      @include responsive(max, $tab) {
+        margin-top: 1em;
+        font-size: 20px; 
+      }
     }
   }
 }

@@ -2,18 +2,22 @@
 @import '../../assets/styles/variables';
 
 .cards {
-  flex-basis: 48%;
+  flex-basis: 49%;
   margin-bottom: 1.5em;
   @include flex(row, space-between, flex-start);
   background-color: $white;
 
-  img { width: 45%; }
+  img { 
+    width: 48%; 
+
+    @include responsive(max, $sm-laptop) { max-height: 200px; }
+  }
 
   span { display: block; }
 }
 
 .card_content {
-  flex-basis: 60%;
+  flex-basis: 55%;
   padding: .8em;
 
   * { margin-bottom: .5em; }
@@ -21,6 +25,9 @@
   .title { 
     font-size: 20px;
     text-transform: uppercase;
+
+    @include responsive(max, $sm-laptop) { font-size: 18px; }
+    @include responsive(max, $tab) { font-size: 16px; }
   }
 
   .sub {
@@ -31,6 +38,9 @@
       padding: .2em .5em;
       background-color: $primary;
       color: $white;
+
+      @include responsive(max, $sm-laptop) { font-size: 14px; }
+      @include responsive(max, $tab) { font-size: 12px; }
     }
   }
 

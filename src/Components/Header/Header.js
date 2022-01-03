@@ -19,6 +19,11 @@ function Header() {
             <li><a href="#FIXME" title="features" target="_self">features</a></li>
             <li><a href="#FIXME" title="contact" target="_self">contact</a></li>
           </ul>
+          <span className="menu">
+            <span className="line">line</span>
+            <span className="line">line</span>
+            <span className="line">line</span>
+          </span>
         </nav>
           <p>pull me <FaBookmark className='bookmark' /></p>
       </div>
