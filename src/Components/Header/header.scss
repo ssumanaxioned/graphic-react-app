@@ -24,6 +24,7 @@
 nav {
   width: 100%;
   padding: .5em 0;
+  z-index: 1;
 
   @include flex(row, space-between, center);
 
@@ -40,9 +41,23 @@ nav {
 
     @include responsive(max, $laptop) { flex-basis: 55%; }
     @include responsive(max, $sm-laptop) { flex-basis: 60%; }
-    @include responsive(max, $tab) { display: none; }
+
+    @include responsive(max, $tab) { 
+      width: 100%;
+      padding: 2em 0;
+      @include flex(column, center, center);
+      position: fixed;
+      top: 70px;
+      left: 0;
+      background-color: $primary;
+      transform: translateX(200%);
+      transition: all .3s ease-in-out;
+      z-index: 2;
+     }
 
     li {
+      @include responsive(max, $tab) { margin-bottom: 1em; }
+
       a {
         color: $textcolor;
         text-transform: uppercase;
@@ -67,9 +82,19 @@ nav {
     height: 3px;
     background-color: $primary;
     text-indent: -9999px;
+    transition: all .3s ease-in-out;
 
     &:first-child { margin-bottom: 5px; }
-
     &:last-child { margin-top: 5px; }
   }
 }
+
+.menu_active { 
+  .line {
+    &:nth-child(2) { opacity: 0; }
+    &:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    &:nth-child(3) { transform: translateY(-8px) rotate(-45deg);  }
+  }
+}
+
+.menu_details_active { transform: translateX(0); }
